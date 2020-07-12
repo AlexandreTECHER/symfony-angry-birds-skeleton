@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello
+	{{ controller_name }}!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<h1>A fiels Guide to Angry Birds</h1>
+			<h2>Games that lodge in the brain often have comical stars</h2>
+		</div>
+
+		<div class="row">
+			<a href="{{ path('bird_calendar') }}" target="_blank">Calendrier</a>
+		</div>
+
+		<div class="row">
+
+			{% if session is not null %}
+				<a href="{{ path('single', {'id' : sessionId}) }}">Last Bird Seen : {{ session.name }}</a>
+			{% endif %}
+			
+		</div>
+
+		<div class="row birds">
+			{% for bird in birds %}
+
+				<div class="card col-3 {{ cycle(['odd', 'even'], loop.index0) }}" style="width: 18rem;">
+					<img src="/images/{{ bird.image }}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<a href="{{ path('single', {'id' : loop.index0}) }}">{{ bird.name }}</>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
+
+{% endblock %}

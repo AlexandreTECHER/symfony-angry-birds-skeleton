@@ -1,0 +1,16 @@
+.birds{
+    display: flex;
+    flex-wrap: wrap;
+}
+.bird{
+    border-bottom: 2px grey solid;
+}
+
+.odd{
+    background: #90ee90;
+    text-align: center;
+}
+.even{
+    background: #e0ffff;
+    text-align: center;
+}
