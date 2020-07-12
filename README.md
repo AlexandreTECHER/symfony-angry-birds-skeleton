@@ -1,0 +1,1 @@
+# symfony-angry-birds-skeleton
